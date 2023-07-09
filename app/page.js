@@ -4,10 +4,10 @@ import Head from "next/head";
 import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
+import Typewriter from "typewriter-effect";
 import me from "../public/me.jpg";
 import nextMessenger from "../public/next-messenger-lg.png";
 import Image from "next/image";
-import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
 import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
@@ -53,6 +53,21 @@ export default function Home() {
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
               Full Stack Web Developer
             </h3>
+            <h3>
+              <Typewriter
+                className="text-2xl py-2 dark:text-white md:text-3xl"
+                onInit={(typewriter) => {
+                    typewriter
+                        .typeString("I am a Full Stack React Developer")
+                        .pauseFor(1000)
+                        .deleteChars(15)
+                        .typeString("Nextjs Developer")
+                        .deleteChars(17)
+                        .typeString('Web Developer')
+                        .stop();
+                }}
+            />
+            </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
               Hi, I am a Full-Stack Developer with a Bachelors in Computer
               Science. I have a strong interest in developing quality software
@@ -95,7 +110,7 @@ export default function Home() {
         <section>
           <div>
             <h3 className="text-3xl py-1 dark:text-white text-center">
-              Portofolio
+              Projects
             </h3>
             <p className="text-lg py-2 leading-8 text-gray-800 dark:text-gray-200 text-center">
               I have a few apps down below that I created using technologies
@@ -113,6 +128,7 @@ export default function Home() {
               target="_blank"
               className="basis-1/3 flex-1 "
             >
+              <p className=" text-center py-2 text-neutral-400 hover:text-white transition">Next Messenger App</p>
               <Image
                 className="rounded-lg object-cover"
                 width={"100%"}
